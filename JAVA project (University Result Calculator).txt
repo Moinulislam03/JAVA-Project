@@ -1,0 +1,501 @@
+****Project*****
+
+
+*********
+
+public abstract class Person
+{
+    private String name ;
+    private int age ;
+    protected String email ;
+    protected boolean occupation ;
+	
+    public Person(String name, int age, String email, boolean occupation)
+	{
+		this.name = name ;
+		this.age = age ;
+		this.email = email ;
+		this.occupation = occupation ;	
+	}
+    public void setName(String name)
+	{
+		this.name = name ;
+	}
+    public void setAge(int age)
+	{
+		this.age = age ;
+	}
+    public String getName()
+	{
+		return name ;
+	}
+    public int getAge()
+	{
+		return age ;
+	}
+	public void setEmail(String email)
+	{
+		this.email = email ;
+	}
+    public String getEmail()
+	{
+		return email ;
+	}
+	public void setOccupation(boolean occupation)
+	{
+		this.occupation = occupation ;
+	}
+	public boolean getOccupation()
+	{
+		return occupation ;
+	}
+	abstract public void hasStudentId() ;
+	abstract public void display() ;
+}
+
+*********
+
+public class Student extends Person
+{
+    private String id ;
+	
+	public Student(String name, int age, String email, boolean occupation, String id)
+	{
+		super(name, age, email, occupation) ;
+		this.id = id ;
+	}
+        public void setId(String id)
+	{
+		this.id = id ;
+	}    
+        public String getId()
+	{
+		return id ;
+	}
+	public void hasStudentId() 
+	{
+		System.out.println("                                                ");
+		System.out.println(" Yes, Student has Student ID card ") ;
+	}
+	public void display() 
+	{
+		System.out.println(" Name of the student is : " + getName()) ;
+		System.out.println(" Age of the student is : " + getAge()) ;
+		System.out.println(" Email of student is : " + getEmail()) ;
+		System.out.println(" Occupation of student is : " + getOccupation()) ;
+		System.out.println(" ID of Student is : " + getId()) ;
+	}
+}
+
+*********
+
+package adminintroduction;
+
+public class AdminIntroduction
+{
+    public void AdminIntroduction()
+    {
+		System.out.println("                                                ");
+		System.out.println("                                                ");
+        System.out.println("----------University Result Calculator----------");
+        System.out.println("                                                "); 
+        System.out.println("                                                ");
+        System.out.println("Press 1 to Enter");
+        System.out.println("Press 2 to Exit");
+    }
+}
+
+*********
+
+package exit;
+
+public class Exit 
+{
+    public void Exit() 
+	{
+        System.out.println("Exit...");
+        
+    }
+}
+
+
+*********
+
+package selectyourpreferreduniversity;
+
+public class SelectYourPreferredUniversity
+{
+    public void SelectYourPreferredUniversity()
+    {
+        System.out.println("Select Your Preferred University");
+        System.out.println("                                                ");
+        System.out.println("                                                ");
+        System.out.println("Press 1 to select BRAC");
+        System.out.println("Press 2 to select NSU");
+        System.out.println("Press 3 to select AIUB");
+        System.out.println("Press 4 to select IUB");
+        System.out.println("Press 5 to select DIU");
+    }
+}
+
+*********
+
+package logininterface;
+
+import java.util.Scanner;
+
+public class LoginInterface
+{
+    public void LoginInterface() 
+    {
+        Scanner input = new Scanner(System.in);
+        
+        String username;
+        String password;
+		System.out.println(" Hey, If you are Moinul or Faris");
+		System.out.println(" Then your username is username");
+		System.out.println(" and your password is password");
+		System.out.println("Enter Username: ");
+        username = input.nextLine();
+        System.out.println("Enter Password: ");
+        password = input.nextLine();
+        
+        if(username.equals("username") && (password.equals("password"))) 
+		{
+	        System.out.println("                                 ");
+            System.out.println("**********Welcome Admin**********");
+            System.out.println("                                 ");
+            System.out.println("                                 ");
+ 
+            System.out.println("Press 1: To Calculate Result");
+            System.out.println("Press 2: Exit");
+		}
+		else
+		{
+			System.out.println("#Error Access");
+		}
+			
+    }
+}
+
+*********
+
+package insertnewresult;
+
+import java.util.Scanner;
+import java.util.Date ;
+
+public class InsertNewResult 
+{
+    public void InsertNewResult()
+    {
+		String grade = " ";
+		double credit1;
+		double credit2;
+		double credit3;
+		double credit4;
+		double gradeValue = 0;
+		double totPtsCourse1 = 0;
+		double totPtsCourse2 = 0;
+		double totPtsCourse3 = 0;
+		double totPtsCourse4 = 0;
+		double totPts = 0;
+		double totalCredits = 0;
+		double cgpa;
+
+		Scanner console = new Scanner(System.in);
+		System.out.println("Please enter the credit point of your course 1: ");
+		credit1 = console.nextDouble();
+		System.out.println("Please enter your grades for course 1: ");
+		grade = console.next();
+
+		if (grade.equals("A+"))
+			gradeValue = 4.00;
+		else if (grade.equals("A"))
+			gradeValue = 3.75;
+		else if (grade.equals("B+"))
+			gradeValue = 3.50;
+		else if (grade.equals("B"))
+			gradeValue = 3.25;
+		else if (grade.equals("C+"))
+			gradeValue = 3.00;
+		else if (grade.equals("C"))
+			gradeValue = 2.75;
+		else if (grade.equals("D+"))
+			gradeValue = 2.50;
+		else if (grade.equals("D"))
+			gradeValue = 2.25;
+		else if (grade.equals("F"))
+			gradeValue = 0.00;
+
+		else
+			System.out.println("Invalid Grade");
+
+		totPtsCourse1 = gradeValue * credit1;
+
+		System.out.println("Please enter the credit point of your course 2: ");
+		credit2 = console.nextDouble();
+		System.out.println("Please enter your grades for course 2: ");
+		grade = console.next();
+
+		
+		if (grade.equals("A+"))
+			gradeValue = 4.00;
+		else if (grade.equals("A"))
+			gradeValue = 3.75;
+		else if (grade.equals("B+"))
+			gradeValue = 3.50;
+		else if (grade.equals("B"))
+			gradeValue = 3.25;
+		else if (grade.equals("C+"))
+			gradeValue = 3.00;
+		else if (grade.equals("C"))
+			gradeValue = 2.75;
+		else if (grade.equals("D+"))
+			gradeValue = 2.50;
+		else if (grade.equals("D"))
+			gradeValue = 2.25;
+		else if (grade.equals("F"))
+			gradeValue = 0.00;
+
+		else
+			System.out.println("Invalid Grade");
+
+		totPtsCourse2 = gradeValue * credit2;
+
+		System.out.println("Please enter the credit point of your course 3: ");
+		credit3 = console.nextDouble();
+		System.out.println("Please enter your grades for course 3: ");
+		grade = console.next();
+
+		if (grade.equals("A+"))
+			gradeValue = 4.00;
+		else if (grade.equals("A"))
+			gradeValue = 3.75;
+		else if (grade.equals("B+"))
+			gradeValue = 3.50;
+		else if (grade.equals("B"))
+			gradeValue = 3.25;
+		else if (grade.equals("C+"))
+			gradeValue = 3.00;
+		else if (grade.equals("C"))
+			gradeValue = 2.75;
+		else if (grade.equals("D+"))
+			gradeValue = 2.50;
+		else if (grade.equals("D"))
+			gradeValue = 2.25;
+		else if (grade.equals("F"))
+			gradeValue = 0.00;
+
+		else
+			System.out.println("Invalid Grade");
+
+		totPtsCourse3 = gradeValue * credit3;
+
+		System.out.println("Please enter the credit point of your course 4: ");
+		credit4 = console.nextDouble();
+		System.out.println("Please enter your grades for course 4: ");
+		grade = console.next();
+
+		if (grade.equals("A+"))
+			gradeValue = 4.00;
+		else if (grade.equals("A"))
+			gradeValue = 3.75;
+		else if (grade.equals("B+"))
+			gradeValue = 3.50;
+		else if (grade.equals("B"))
+			gradeValue = 3.25;
+		else if (grade.equals("C+"))
+			gradeValue = 3.00;
+		else if (grade.equals("C"))
+			gradeValue = 2.75;
+		else if (grade.equals("D+"))
+			gradeValue = 2.50;
+		else if (grade.equals("D"))
+			gradeValue = 2.25;
+		else if (grade.equals("F"))
+			gradeValue = 0.00;
+		else
+		System.out.println("Invalid Grade");
+		totPtsCourse4 = gradeValue * credit4;
+
+		totPts = totPtsCourse1 + totPtsCourse2 + totPtsCourse3 + totPtsCourse4;
+		totalCredits = credit1 + credit2 + credit3 + credit4;
+		cgpa = totPts / totalCredits;
+		System.out.printf("                    ");
+		System.out.printf("Your CGPA is: %.2f\n", +cgpa);
+		
+		Date now = new Date();
+		System.out.println("  ");
+		System.out.println(now);
+		System.out.println(" ");
+	   		
+    }
+}
+
+*********
+
+import adminintroduction.*;
+import exit.*;
+import selectyourpreferreduniversity.*;
+import logininterface.*;
+import insertnewresult.*;
+import java.util.Scanner;
+
+
+public class UniversityResultCalculator
+{
+    public static void main(String[] args)
+    {
+		
+		Student s1 = new Student ("Moinul Islam", 20, "islammoinul42390@gmail.com", false, "20-42390-1") ;
+		s1.hasStudentId() ;
+		s1.display() ;
+		System.out.println("                                                ");
+		System.out.println("*********************************") ;
+		Student s2 = new Student ("Mir Faris", 20, "mirfaris79@gmail.com", false, "20-42241-1") ;
+		s2.hasStudentId() ;
+		s2.display() ;
+		
+		AdminIntroduction ai = new AdminIntroduction();
+        ai.AdminIntroduction();
+        Scanner input1  = new Scanner(System.in);
+        int a;
+        a = input1.nextInt();
+        if(a==1)
+        {
+            SelectYourPreferredUniversity supu = new SelectYourPreferredUniversity();
+			supu.SelectYourPreferredUniversity();
+			Scanner input2  = new Scanner(System.in);
+			int b;
+			b = input2.nextInt();
+			if(b==1)
+			{
+				LoginInterface lif = new LoginInterface();
+				lif.LoginInterface();
+				Scanner input3 = new Scanner(System.in);
+                int c;
+				int d;
+				
+				
+				c = input3.nextInt();
+				d = input3.nextInt();
+				
+                
+				if (c==1)
+				{
+					InsertNewResult inr = new InsertNewResult();
+					inr.InsertNewResult();
+				}
+				else if (d == 2)
+				{
+					 Exit e = new Exit();
+                     e.Exit();
+				}
+				
+				
+			}
+			else if(b==2)
+			{
+				LoginInterface lif = new LoginInterface();
+				lif.LoginInterface();
+				Scanner input3 = new Scanner(System.in);
+                int c;
+				int d;
+				
+
+                c = input3.nextInt();
+                d = input3.nextInt();
+                
+				if (c==1)
+				{
+					InsertNewResult inr = new InsertNewResult();
+					inr.InsertNewResult();
+				}
+				else if (d == 2)
+				{
+					 Exit e = new Exit();
+                     e.Exit();
+				}
+			}
+			else if(b==3)
+			{
+				LoginInterface lif = new LoginInterface();
+				lif.LoginInterface();
+				Scanner input3 = new Scanner(System.in);
+                int c;
+				int d;
+				
+
+                c = input3.nextInt();
+                d = input3.nextInt();
+                
+				if (c==1)
+				{
+					InsertNewResult inr = new InsertNewResult();
+					inr.InsertNewResult();
+				}
+				else if (d == 2)
+				{
+					 Exit e = new Exit();
+                     e.Exit();
+				}
+			}
+			else if(b==4)
+			{
+				LoginInterface lif = new LoginInterface();
+				lif.LoginInterface();
+				Scanner input3 = new Scanner(System.in);
+                int c;
+				int d;
+
+
+
+                c = input3.nextInt();
+                d = input3.nextInt();
+                
+				if (c==1)
+				{
+					InsertNewResult inr = new InsertNewResult();
+					inr.InsertNewResult();
+				}
+				else if (d == 2)
+				{
+					 Exit e = new Exit();
+                     e.Exit();
+				}
+			}
+			else if(b==5)
+			{
+				LoginInterface lif = new LoginInterface();
+				lif.LoginInterface();
+				Scanner input3 = new Scanner(System.in);
+                int c;
+				int d;
+
+
+
+                c = input3.nextInt();
+                d = input3.nextInt();
+                
+				if (c==1)
+				{
+					InsertNewResult inr = new InsertNewResult();
+					inr.InsertNewResult();
+				}
+				else if (d == 2)
+				{
+					 Exit e = new Exit();
+                     e.Exit();
+				}
+			}
+			
+        }
+        else if(a==2)
+        {
+            Exit e = new Exit();
+            e.Exit();
+        }
+    }
+}
+ 
